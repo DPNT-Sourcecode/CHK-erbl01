@@ -15,6 +15,10 @@ def get_price(item, frequency):
             normal_priced_items = frequency % 2 * value
             special_offer_priced_items = math.floor(frequency / 2) * special_offer
             return normal_priced_items + special_offer_priced_items
+        case "C":
+            return 20 * frequency
+        case "D":
+            return 15 * frequency
         case _:
             return 0
 

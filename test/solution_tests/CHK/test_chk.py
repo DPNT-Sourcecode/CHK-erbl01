@@ -8,10 +8,17 @@ class TestCHK():
   def test_price_of_one_item(self):
     assert checkout_solution.checkout("A") == 50
 
-  def test_A_special_offer_price(self):
+  def test_a_special_offer_price(self):
     assert checkout_solution.checkout("AAA") == 130
 
-  def test_A_special_offer_price_and_normal_price(self):
+  def test_a_special_offer_price_and_normal_price(self):
     assert checkout_solution.checkout("A"*7) == 310
 
-  def 
+  def test_b_price(self):
+    assert checkout_solution.checkout("B") == 30
+
+  def test_b_special_offer_price(self):
+    assert checkout_solution.checkout("BB") == 45
+
+  def test_b_special_offer_price_and_normal_price(self):
+    assert checkout_solution.checkout("B"*5) == 120
