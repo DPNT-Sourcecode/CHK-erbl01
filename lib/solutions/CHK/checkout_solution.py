@@ -9,4 +9,3 @@ def checkout(skus):
     result = collections.Counter(skus)
     
 
-
