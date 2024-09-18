@@ -10,6 +10,9 @@ def get_price(item, frequency):
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+    if not all(char in {'A', 'B', 'C', 'D'} for char in skus):
+        return -1
+
     result = collections.Counter(skus)
     total_price = 0
     for sku, frequency in result.items():
