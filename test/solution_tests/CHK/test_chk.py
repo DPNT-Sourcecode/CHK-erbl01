@@ -22,3 +22,12 @@ class TestCHK():
 
   def test_b_special_offer_price_and_normal_price(self):
     assert checkout_solution.checkout("B"*5) == 120
+  
+  def test_c_price(self):
+    assert checkout_solution.checkout("CCC") == 60
+
+  def test_d_price(self):
+    assert checkout_solution.checkout("DDD") == 45
+
+  def test_multi_items_price(self): 
+    assert checkout_solution.checkout("AAABBABCD") == 290
