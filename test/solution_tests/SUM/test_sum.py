@@ -27,5 +27,3 @@ class TestSum():
             sum_solution.compute(-1, -1)
 
 
-
-

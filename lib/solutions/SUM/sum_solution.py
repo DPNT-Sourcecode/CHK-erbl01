@@ -7,4 +7,3 @@ def compute(x: int, y: int):
         raise ValueError("Number has to be between 0 and 100")
 
     return x + y
-
