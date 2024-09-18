@@ -1,13 +1,20 @@
 import collections
+import math
 
 def get_price(item, frequency):
     match item:
         case "A":
             value = 50
             special_offer = 130
-            if frequency > 3:
-                frequency % 3
-            return 50
+            normal_priced_items = frequency % 3 * value
+            special_offer_priced_items = math.floor(frequency / 3) * special_offer
+            return normal_priced_items + special_offer_priced_items
+        case "B": 
+            value = 50
+            special_offer = 130
+            normal_priced_items = frequency % 3 * value
+            special_offer_priced_items = math.floor(frequency / 3) * special_offer
+            return normal_priced_items + special_offer_priced_items
         case _:
             return 0
 
