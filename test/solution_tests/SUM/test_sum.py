@@ -8,5 +8,3 @@ class TestSum():
     def test_x_cant_be_negative(self):
         with pytest.raises(ValueError):
             sum_solution(-1, 2)
-
-
