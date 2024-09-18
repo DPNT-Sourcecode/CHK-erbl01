@@ -1,9 +1,12 @@
-
+import collections
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    number_of_items = {}
-    for item in skus:
-        
+    price_list = {
+        "A": {re}
+    }
+    result = collections.Counter(skus)
+    
+
 

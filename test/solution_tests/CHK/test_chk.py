@@ -1,6 +1,6 @@
-from solutions.HLO import hello_solution
+from solutions.CHK import checkout_solution
 
 
 class TestCHK():
-  def test(self):
-   
+  def test_price_of_one_item(self):
+    assert checkout_solution.checkout("A") == 50
