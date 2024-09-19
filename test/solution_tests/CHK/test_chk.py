@@ -69,9 +69,10 @@ class TestCHK():
     assert checkout_solution.checkout(sku) == expected_price
 
   def test_all(self):
-    for sku, offers in checkout_solution.PRICES:
+    for sku, offers in checkout_solution.PRICES.items():
       for offer in offers:
-        check_prices(sku*offer["units_required"], offer["price"])
+        check_prices(self, sku*offer["units_required"], offer["price"])
 
   
+
 
