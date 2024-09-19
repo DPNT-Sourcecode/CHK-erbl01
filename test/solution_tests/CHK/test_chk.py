@@ -16,6 +16,7 @@ class TestCHK():
       
       required_item_price = checkout_solution.PRICES[offer["item_required"]][-1]["price"] 
       expected_price = required_item_price * offer["units_required"]
+
       for ele in checkout_solution.PRICES[offer["item_required"]]:
         if ele["units_required"] == offer["units_required"]:
           expected_price = ele["price"] 
@@ -23,11 +24,3 @@ class TestCHK():
       assert checkout_solution.checkout(items) == expected_price
 
   
-
-
-
-
-
-
-
-
