@@ -1,47 +1,35 @@
 import collections
 import math
 
-prices = {"A": [{"price": 200, "units_required": 5}, {"price": 130, "units_required": 3}, {"price": 50, "units_required": 1}], "E": [{"price": 50, "unites_required": 2}, {"price": 40, "units_required": 1}]}
+PRICES = {
+    "A": [
+            {"price": 200, "units_required": 5}, 
+            {"price": 130, "units_required": 3}, 
+            {"price": 50, "units_required": 1}
+        ], 
+    "B": [
+            {"price": 45, "units_required": 2}, 
+            {"price": 30, "units_required": 1}
+        ],
+    "C": [{"price": 20, "units_required": 1}],
+    "D": [{"price": 15, "units_required": 1}],
+    "E": [{"price": 40, "units_required": 1}]}
 
-total = 0
-for sku, frequency in {"A": 6, "E": 1}:
-    x = 0
-    for offer in prices:
-        if frequency / offer["unit_required"] >= 1:
-            x += offer["price"] * math.floor(frequency / offer["unit_required"])
-            frequency -= math.floor(frequency / offer["unit_required"]) * offer["unit_required"] 
+def get_item_price(sku: str, units: int):
+    item_total = 0
+    for offer in PRICES[sku]:
+        units_with_offer = units / offer["units_required"]
+        if units_with_offer >= 1:
+            item_total += offer["price"] * math.floor(units_with_offer)
+            units -= math.floor(units_with_offer) * offer["units_required"] 
 
+    return item_total
 
-def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
-    match item:
-        case "A":
-            value = 50
-            special_offer = 130
-            bulk_special_offer = 200
-
-            bulk_special_offer_priced_items = 0
-            if frequency / 5 >= 1:
-                bulk_special_offer_priced_items = math.floor(frequency / 5) * bulk_special_offer
-                frequency -= math.floor(frequency / 5) * 5
-            normal_priced_items = frequency % 3 * value
-            special_offer_priced_items = math.floor(frequency / 3) * special_offer
-            return normal_priced_items + special_offer_priced_items + bulk_special_offer_priced_items
-        case "B": 
-            value = 30
-            special_offer = 45
-            if sku_frequencies["E"] / 2 >= 1:
-                frequency -= math.floor(sku_frequencies["E"] / 2)
-            normal_priced_items = frequency % 2 * value
-            special_offer_priced_items = math.floor(frequency / 2) * special_offer
-            return normal_priced_items + special_offer_priced_items
-        case "C":
-            return 20 * frequency
-        case "D":
-            return 15 * frequency
-        case "E":
-            return 40 * frequency
-        case _:
-            return 0
+def get_price(item: str, units: int, sku_units: dict) -> int:
+    if item == "B":
+        units -= math.floor(sku_units["E"] / 2)
+    return get_item_price(item, units)
+        
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -56,4 +44,5 @@ def checkout(skus):
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
