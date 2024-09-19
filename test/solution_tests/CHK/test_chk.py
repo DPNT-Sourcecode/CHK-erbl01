@@ -23,6 +23,8 @@ class TestCHK():
 
       assert checkout_solution.checkout(items) == expected_price
 
+
   
+
 
 
