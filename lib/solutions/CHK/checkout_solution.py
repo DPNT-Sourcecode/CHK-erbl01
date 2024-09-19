@@ -49,7 +49,7 @@ PRICES = {
     "S": [{"price": 30, "units_required": 1}], 
     "T": [{"price": 20, "units_required": 1}], 
     "U": [
-            {"price": 80, "units_required": 4},
+            {"price": 120, "units_required": 4},
             {"price": 40, "units_required": 1},
         ],
     "V": [
@@ -98,6 +98,7 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
 
