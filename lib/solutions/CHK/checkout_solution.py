@@ -37,7 +37,7 @@ def get_price(item: str, units: int, sku_units: dict) -> int:
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    allowed_items = {'A', 'B', 'C', 'D', 'E'}
+    allowed_items = set(PRICES.keys())
     if not all(char in allowed_items for char in skus):
         return -1
 

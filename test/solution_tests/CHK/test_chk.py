@@ -52,3 +52,12 @@ class TestCHK():
   
   def test_multi_items_price_with_bulk_price(self):
     assert checkout_solution.checkout("A"*9 + "EEBBBDC") == 540
+  
+  def test_f_price(self):
+    assert checkout_solution.checkout("F") == 10
+
+  def test_f_offer(self):
+    assert checkout_solution.checkout("FFF") == 20
+  
+  def test_f_offer_and_special_price(self):
+    assert checkout_solution.checkout("FFFF") == 30
