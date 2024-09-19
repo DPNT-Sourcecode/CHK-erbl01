@@ -65,14 +65,14 @@ class TestCHK():
   def test_multi_items_with_f(self):
     assert checkout_solution.checkout("A"*9 + "EEBBBDCFFFF") == 570
   
-  def check_prices(self, sku, expected_price):
-    assert checkout_solution.checkout(sku) == expected_price
+  # def check_prices(self, sku, expected_price):
+  #   assert checkout_solution.checkout(sku) == expected_price
 
   def test_all(self):
     for sku, offers in checkout_solution.PRICES.items():
       for offer in offers:
-        check_prices(self, sku*offer["units_required"], offer["price"])
+        # check_prices(self, sku*offer["units_required"], offer["price"])
+        print(sku, offer)
+        assert checkout_solution.checkout(sku*offer["units_required"]) == offer["price"]
 
   
-
-
