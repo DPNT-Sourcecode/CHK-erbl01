@@ -14,16 +14,16 @@ class TestCHK():
     for sku, offer in checkout_solution.BUY_X_GET_Y_FREE.items():
       items = offer["item_required"]*offer["units_required"]+sku
       
-      required_item_price = checkout_solution.PRICES[offer["item_required"]][-1]["price"]
+      required_item_price = checkout_solution.PRICES[offer["item_required"]][-1]["price"] 
+      expected_price = required_item_price * offer["units_required"]
       for ele in checkout_solution.PRICES[offer["item_required"]]:
         if ele["units_required"] == offer["units_required"]:
-          required_item_price = ele["price"]
-
-      expected_price = required_item_price*offer["units_required"]
+          expected_price = ele["price"] 
 
       assert checkout_solution.checkout(items) == expected_price
 
   
+
 
 
 
