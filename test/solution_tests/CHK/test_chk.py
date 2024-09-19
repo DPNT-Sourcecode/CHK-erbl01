@@ -3,7 +3,7 @@ from solutions.CHK import checkout_solution
 
 class TestCHK():
   def test_invalid_item(self):
-    assert checkout_solution.checkout("ZDDDD") == -1
+    assert checkout_solution.checkout("1") == -1
 
   def test_price_of_one_item(self):
     assert checkout_solution.checkout("A") == 50
@@ -64,5 +64,8 @@ class TestCHK():
   
   def test_multi_items_with_f(self):
     assert checkout_solution.checkout("A"*9 + "EEBBBDCFFFF") == 570
-  
+
+  def test_all_prices(self):
+    for 
+
   
