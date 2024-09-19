@@ -6,7 +6,10 @@ def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
         case "A":
             value = 50
             special_offer = 130
-            
+            bulk_special_offer = 200
+
+            if frequency / 5 >
+
             normal_priced_items = frequency % 3 * value
             special_offer_priced_items = math.floor(frequency / 3) * special_offer
             return normal_priced_items + special_offer_priced_items
@@ -40,4 +43,5 @@ def checkout(skus):
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
