@@ -3,10 +3,13 @@ import math
 
 prices = {"A": [{"price": 200, "units_required": 5}, {"price": 130, "units_required": 3}, {"price": 50, "units_required": 1}], "E": [{"price": 50, "unites_required": 2}, {"price": 40, "units_required": 1}]}
 
+total = 0
 for sku, frequency in {"A": 6, "E": 1}:
-    total
+    x = 0
     for offer in prices:
-
+        if frequency / offer["unit_required"] >= 1:
+            x += offer["price"] * math.floor(frequency / offer["unit_required"])
+            frequency -= math.floor(frequency / offer["unit_required"]) * offer["unit_required"] 
 
 
 def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
@@ -53,6 +56,7 @@ def checkout(skus):
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
 
