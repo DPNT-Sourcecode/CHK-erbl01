@@ -64,3 +64,5 @@ class TestCHK():
   
   def test_multi_items_with_f(self):
     assert checkout_solution.checkout("A"*9 + "EEBBBDCFFFF") == 570
+  
+  
