@@ -30,9 +30,3 @@ class TestCHK():
     assert checkout_solution.checkout("NNN") == 120
 
   
-
-
-
-
-
-
