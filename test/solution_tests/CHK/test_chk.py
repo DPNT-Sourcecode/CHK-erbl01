@@ -31,3 +31,6 @@ class TestCHK():
 
   def test_multi_items_price(self): 
     assert checkout_solution.checkout("AAABBABCD") == 290
+  
+  def test_e_price(self):
+    assert checkout_solution.checkout("EE") == 80

@@ -12,7 +12,8 @@ def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
         case "B": 
             value = 30
             special_offer = 45
-            if sku_frequencies["E"] / 2 > 1
+            if sku_frequencies["E"] / 2 > 1:
+                frequency -= math.floor(sku_frequencies["E"] / 2)
             normal_priced_items = frequency % 2 * value
             special_offer_priced_items = math.floor(frequency / 2) * special_offer
             return normal_priced_items + special_offer_priced_items
@@ -20,6 +21,8 @@ def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
             return 20 * frequency
         case "D":
             return 15 * frequency
+        case "E":
+            return 40 * frequency
         case _:
             return 0
 
