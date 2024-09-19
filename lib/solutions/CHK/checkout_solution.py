@@ -22,7 +22,6 @@ def get_item_price(sku: str, units: int):
         if units_with_offer >= 1:
             item_total += offer["price"] * math.floor(units_with_offer)
             units -= math.floor(units_with_offer) * offer["units_required"] 
-
     return item_total
 
 def get_price(item: str, units: int, sku_units: dict) -> int:
@@ -44,5 +43,6 @@ def checkout(skus):
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
