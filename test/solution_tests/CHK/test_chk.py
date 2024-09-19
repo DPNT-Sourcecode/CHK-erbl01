@@ -12,7 +12,7 @@ class TestCHK():
     assert checkout_solution.checkout("AAA") == 130
 
   def test_a_special_offer_price_and_normal_price(self):
-    assert checkout_solution.checkout("A"*7) == 310
+    assert checkout_solution.checkout("A"*4) == 130 + 50
 
   def test_b_price(self):
     assert checkout_solution.checkout("B") == 30
@@ -40,3 +40,5 @@ class TestCHK():
   
   def test_e_offer_and_b_special_price(self):
     assert checkout_solution.checkout("EEBBB") == 125
+  
+  def test
