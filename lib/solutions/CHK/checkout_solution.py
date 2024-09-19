@@ -19,7 +19,7 @@ PRICES = {
             {"price": 10, "units_required": 1}
         ]}
 
-def get_item_price(sku: str, units: int):
+def get_item_price(sku: str, units: int) -> int:
     item_total = 0
     for offer in PRICES[sku]:
         units_with_offer = units / offer["units_required"]
@@ -36,7 +36,7 @@ def get_price(item: str, units: int, sku_units: dict) -> int:
 
 # noinspection PyUnusedLocal
 # skus = unicode string
-def checkout(skus):
+def checkout(skus: str) -> int:
     allowed_items = set(PRICES.keys())
     if not all(char in allowed_items for char in skus):
         return -1
@@ -47,7 +47,4 @@ def checkout(skus):
         total_price += get_price(sku, frequency, result)
     
     return total_price
-
-
-
 
