@@ -51,4 +51,4 @@ class TestCHK():
     assert checkout_solution.checkout("A"*9) == 380
   
   def test_multi_items_price_with_bulk_price(self):
-    assert checkout_solution.checkout("A"*9 + "EEBBB" + ) == 330
+    assert checkout_solution.checkout("A"*9 + "EEBBBDC") == 540
