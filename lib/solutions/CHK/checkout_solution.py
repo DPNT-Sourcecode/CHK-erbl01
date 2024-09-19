@@ -17,11 +17,20 @@ PRICES = {
     "F": [
             {"price": 20, "units_required": 3},
             {"price": 10, "units_required": 1}
-        ]}
+        ],
+    "G": [{"price": 20, "units_required": 1}],    
+    "H": [
+            {"price": 80, "units_required": 10},
+            {"price": 45, "units_required": 5},
+            {"price": 10, "units_required": 1},
+        ], 
+    "I": [{"price": 35, "units_required": 1}],    
+    }
 
 BUY_X_GET_Y_FREE = {
     "B": {"item_free": "E", "units_required": 2},
-    "F": {"item_free": "E", "units_required": 2},
+    "N": {"item_free": "M", "units_required": 3},
+    "R": {"item_free": "Q", "units_required": 3},
 }
 
 def get_item_price(sku: str, units: int) -> int:
@@ -53,5 +62,6 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
