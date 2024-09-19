@@ -12,10 +12,13 @@ class TestCHK():
 
   def test_buy_x_get_y_free(self):
     for sku, offer in checkout_solution.BUY_X_GET_Y_FREE.items():
-      print(offer["item_required"]*offer["units_required"]+sku)
-      assert checkout_solution.checkout(offer["item_required"]*offer["units_required"]+sku) == checkout_solution.PRICES[offer["item_required"]][-1]["price"]*offer["units_required"]
+      items = offer["item_required"]*offer["units_required"]+sku
+      required_item_price = checkout_solution.PRICES[offer["item_required"]][-1]["price"]
+      expected_price = required_item_price*offer["units_required"]
+      assert checkout_solution.checkout(items) == expected_price
 
   
+
 
 
 
