@@ -64,9 +64,9 @@ PRICES = {
     }
 
 BUY_X_GET_Y_FREE = {
-    "B": {"item_free": "E", "units_required": 2},
-    "N": {"item_free": "M", "units_required": 3},
-    "R": {"item_free": "Q", "units_required": 3},
+    "B": {"item_required": "E", "units_required": 2},
+    "N": {"item_required": "M", "units_required": 3},
+    "R": {"item_required": "Q", "units_required": 3},
 }
 
 def get_item_price(sku: str, units: int) -> int:
@@ -81,7 +81,7 @@ def get_item_price(sku: str, units: int) -> int:
 def get_price(item: str, units: int, sku_units: dict) -> int:
     if item in BUY_X_GET_Y_FREE.keys():
         deal = BUY_X_GET_Y_FREE[item]
-        units -= math.floor(sku_units[deal["item_free"]] / deal["units_required"])
+        units -= math.floor(sku_units[deal["item_required"]] / deal["units_required"])
     return get_item_price(item, units)
         
 
@@ -98,4 +98,5 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
