@@ -65,8 +65,8 @@ PRICES = {
 
 BUY_X_GET_Y_FREE = {
     "B": {"item_required": "E", "units_required": 2},
-    "N": {"item_required": "M", "units_required": 3},
-    "R": {"item_required": "Q", "units_required": 3},
+    "M": {"item_required": "N", "units_required": 3},
+    "Q": {"item_required": "R", "units_required": 3},
 }
 
 def get_item_price(sku: str, units: int) -> int:
@@ -98,5 +98,6 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
