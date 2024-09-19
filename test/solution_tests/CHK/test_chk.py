@@ -23,14 +23,13 @@ class TestCHK():
 
       assert checkout_solution.checkout(items) == expected_price
 
-  def test_x(self):
+  def test_failed(self):
     assert checkout_solution.checkout("UUU") == 120
     assert checkout_solution.checkout("RRRQ") == 150
-    assert checkout_solution.checkout("RRRRQ") == 120
- - {"method":"checkout","params":["RRRQ"],"id":"CHK_R4_065"}, expected: 150, got: 180
- - {"method":"checkout","params":["RRRRQ"]
+    assert checkout_solution.checkout("RRRRQ") == 200
 
   
+
 
 
 
