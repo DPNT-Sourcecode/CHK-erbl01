@@ -34,3 +34,6 @@ class TestCHK():
   
   def test_e_price(self):
     assert checkout_solution.checkout("EE") == 80
+
+  def test_e_offer(self):
+    assert checkout_solution.checkout("EEB") == 80

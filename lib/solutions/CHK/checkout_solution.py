@@ -12,7 +12,7 @@ def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
         case "B": 
             value = 30
             special_offer = 45
-            if sku_frequencies["E"] / 2 > 1:
+            if sku_frequencies["E"] / 2 >= 1:
                 frequency -= math.floor(sku_frequencies["E"] / 2)
             normal_priced_items = frequency % 2 * value
             special_offer_priced_items = math.floor(frequency / 2) * special_offer
@@ -29,7 +29,8 @@ def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    if not all(char in {'A', 'B', 'C', 'D'} for char in skus):
+    allowed_items = {'A', 'B', 'C', 'D', 'E'}
+    if not all(char in allowed_items for char in skus):
         return -1
 
     result = collections.Counter(skus)
@@ -38,6 +39,4 @@ def checkout(skus):
         total_price += get_price(sku, frequency, result)
     
     return total_price
-
-
 
