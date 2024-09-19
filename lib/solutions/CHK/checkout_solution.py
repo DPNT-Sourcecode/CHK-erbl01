@@ -1,7 +1,7 @@
 import collections
 import math
 
-def get_price(item, frequency):
+def get_price(item: str, frequency: int, sku_frequencies: dict) -> int:
     match item:
         case "A":
             value = 50
@@ -31,7 +31,8 @@ def checkout(skus):
     result = collections.Counter(skus)
     total_price = 0
     for sku, frequency in result.items():
-        total_price += get_price(sku, frequency)
+        total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
