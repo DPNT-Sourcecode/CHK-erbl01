@@ -10,6 +10,12 @@ class TestCHK():
       for offer in offers:
         assert checkout_solution.checkout(sku*offer["units_required"]) == offer["price"]
 
+  def test_all_combo_offers(self):
+    for sku, offers in checkout_solution.PRICES.items():
+      units_required = sum([offer["units_required"] for offer in offers])
+      total_expected_price = sum([offer["price"] for offer in offers])
+      assert checkout_solution.checkout(sku*units_required) == total_expected_price
+
   def test_buy_x_get_y_free(self):
     for sku, offer in checkout_solution.BUY_X_GET_Y_FREE.items():
       items = offer["item_required"]*offer["units_required"]+sku
@@ -24,3 +30,4 @@ class TestCHK():
       assert checkout_solution.checkout(items) == expected_price
 
   
+
