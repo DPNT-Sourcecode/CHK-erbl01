@@ -46,10 +46,11 @@ class TestCHK():
     assert checkout_solution.checkout("CDEFGHIJLMOW") == 345
 
   def test_combined_free_items(self): 
-    assert checkout_solution.checkout("EEB")
+    assert checkout_solution.checkout("EEBFFFNNNMRRRQUUUU") == 490
 
     
   
+
 
 
 
