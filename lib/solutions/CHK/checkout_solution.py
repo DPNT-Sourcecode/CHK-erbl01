@@ -91,6 +91,12 @@ def get_group_discount_price(sku_units: dict) -> int:
 
     total_price = 0
 
+    available_group_discount_items = [item for item in GROUP_DISCOUNT_ITEMS if item in sku_units.keys()]
+
+    group_discount_items_count = sum(sku_units[item] for item in available_group_discount_items)
+
+    total_price = math.floor(group_discount_items_count / ITEMS_REQUIRED_FOR_OFFER) * DISCOUNTED_PRICE
+
     return total_price
 
 # noinspection PyUnusedLocal
@@ -106,6 +112,7 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
 
