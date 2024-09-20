@@ -31,7 +31,12 @@ class TestCHK():
     assert checkout_solution.checkout("SSSYY") == 85 
 
   def test_group_buy_zzss(self):
-    # because of different prices ensure the most expensive is remvoed 
-    assert checkout_solution.checkout("ZZSS") == 65 
+    # because of different prices ensure the most expensive is remvoed i.e.ZZS = 45 + S = 65
+    assert checkout_solution.checkout("ZZSS") == 65
+  
+  def test_group_buy_complex(self):
+    assert checkout_solution.checkout("SSTTXXYYZZ") == 152
+
     
   
+
