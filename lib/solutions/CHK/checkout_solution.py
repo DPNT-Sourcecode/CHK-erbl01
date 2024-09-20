@@ -99,9 +99,9 @@ def get_group_discount_price(sku_units: dict) -> int:
     total_price = math.floor(group_discount_items_count / ITEMS_REQUIRED_FOR_OFFER) * DISCOUNTED_PRICE
     
     for item in available_group_discount_items:
-        x = sku_units[item] if sku_units[item] < max_deductable_items_count else max_deductable_items_count
-        sku_units[item] -= x
-        max_deductable_items_count -= x
+        max_units_to_subtract = sku_units[item] if sku_units[item] < max_deductable_items_count else max_deductable_items_count
+        sku_units[item] -= max_units_to_subtract
+        max_deductable_items_count -= max_units_to_subtract
 
     return total_price
 
@@ -118,6 +118,7 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
 

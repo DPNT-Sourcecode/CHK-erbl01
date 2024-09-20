@@ -26,6 +26,12 @@ class TestCHK():
   
   def test_group_buy_sss(self):
     assert checkout_solution.checkout("SSS") == 45
+
+  def test_group_buy_sssyy(self):
+    assert checkout_solution.checkout("SSSYY") == 85 
+
+  #def test_
   
+
 
 
