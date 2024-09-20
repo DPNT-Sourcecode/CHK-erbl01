@@ -24,6 +24,8 @@ class TestCHK():
       assert checkout_solution.checkout(items) == expected_price
 
   
-
+  def test_group_buy_sss(self):
+    assert checkout_solution.checkout("SSS") == 45
   
+
 

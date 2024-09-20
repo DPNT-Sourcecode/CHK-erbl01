@@ -101,11 +101,12 @@ def checkout(skus: str) -> int:
         return -1
 
     result = collections.Counter(skus)
-    total_price = 0
+    total_price = get_group_discount_price(result)
     for sku, frequency in result.items():
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
 
