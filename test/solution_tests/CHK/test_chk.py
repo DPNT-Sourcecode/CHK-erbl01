@@ -36,7 +36,14 @@ class TestCHK():
   def test_group_buy_complex(self):
     assert checkout_solution.checkout("SSTTXXYYZZ") == 152
 
+  def test_no_group_buy_offer(self):
+    assert checkout_solution.checkout("ABSZ") == 121
+  
+  def test_no_discount(self):
+    assert checkout_solution.checkout("CDEFGHIJLMOW") == 
+
     
   
+
 
 
