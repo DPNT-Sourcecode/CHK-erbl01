@@ -84,7 +84,14 @@ def get_price(item: str, units: int, sku_units: dict) -> int:
     return get_item_price(item, units)
         
 
+def get_group_discount_price(sku_units: dict) -> int:
+    GROUP_DISCOUNT_ITEMS = ["S", "T", "X", "Y", "Z"]
+    ITEMS_REQUIRED_FOR_OFFER = 3
+    DISCOUNTED_PRICE = 45
 
+    total_price = 0
+
+    return total_price
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -99,5 +106,6 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 

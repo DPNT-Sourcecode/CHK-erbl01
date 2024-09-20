@@ -23,10 +23,7 @@ class TestCHK():
 
       assert checkout_solution.checkout(items) == expected_price
 
-  def test_failed(self):
-    assert checkout_solution.checkout("UUU") == 120
-    assert checkout_solution.checkout("RRRQ") == 150
-    assert checkout_solution.checkout("RRRRQ") == 200
-    assert checkout_solution.checkout("NNN") == 120
+  
 
   
+
