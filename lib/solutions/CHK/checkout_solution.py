@@ -27,8 +27,8 @@ PRICES = {
     "I": [{"price": 35, "units_required": 1}],    
     "J": [{"price": 60, "units_required": 1}], 
     "K": [
-            {"price": 150, "units_required": 2},
-            {"price": 80, "units_required": 1},
+            {"price": 120, "units_required": 2},
+            {"price": 70, "units_required": 1},
         ],   
     "L": [{"price": 90, "units_required": 1}], 
     "M": [{"price": 15, "units_required": 1}], 
@@ -45,7 +45,7 @@ PRICES = {
             {"price": 30, "units_required": 1},
         ], 
     "R": [{"price": 50, "units_required": 1}], 
-    "S": [{"price": 30, "units_required": 1}], 
+    "S": [{"price": 20, "units_required": 1}], 
     "T": [{"price": 20, "units_required": 1}], 
     "U": [
             {"price": 120, "units_required": 4},
@@ -57,9 +57,9 @@ PRICES = {
             {"price": 50, "units_required": 1},
         ], 
     "W": [{"price": 20, "units_required": 1}], 
-    "X": [{"price": 90, "units_required": 1}], 
-    "Y": [{"price": 10, "units_required": 1}], 
-    "Z": [{"price": 50, "units_required": 1}], 
+    "X": [{"price": 17, "units_required": 1}], 
+    "Y": [{"price": 20, "units_required": 1}], 
+    "Z": [{"price": 21, "units_required": 1}], 
     }
 
 BUY_X_GET_Y_FREE = {
@@ -84,6 +84,8 @@ def get_price(item: str, units: int, sku_units: dict) -> int:
     return get_item_price(item, units)
         
 
+
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus: str) -> int:
@@ -97,4 +99,5 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
