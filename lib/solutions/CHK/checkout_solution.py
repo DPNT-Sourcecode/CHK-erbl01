@@ -92,7 +92,7 @@ def get_group_discount_price(sku_units: dict) -> int:
     DISCOUNTED_PRICE = 45
 
     total_price = 0
-
+    # get an array of group discount items that occur in the input string
     available_group_discount_items = [item for item in GROUP_DISCOUNT_ITEMS if item in sku_units.keys()]
 
     group_discount_items_count = sum(sku_units[item] for item in available_group_discount_items)
@@ -120,4 +120,5 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
