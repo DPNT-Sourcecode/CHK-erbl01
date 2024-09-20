@@ -4,6 +4,9 @@ from solutions.CHK import checkout_solution
 class TestCHK():
   def test_invalid_item(self):
     assert checkout_solution.checkout("1") == -1
+  
+  def test_invalid_item(self):
+    assert checkout_solution.checkout("") == 0  
 
   def test_all_normal_and_offers(self):
     for sku, offers in checkout_solution.PRICES.items():
@@ -42,8 +45,12 @@ class TestCHK():
   def test_no_discount(self):
     assert checkout_solution.checkout("CDEFGHIJLMOW") == 345
 
+  def test_combined_free_items(self): 
+    assert checkout_solution.checkout("EEB")
+
     
   
+
 
 
 
