@@ -40,10 +40,11 @@ class TestCHK():
     assert checkout_solution.checkout("ABSZ") == 121
   
   def test_no_discount(self):
-    assert checkout_solution.checkout("CDEFGHIJLMOW") == 
+    assert checkout_solution.checkout("CDEFGHIJLMOW") == 345
 
     
   
+
 
 
 
