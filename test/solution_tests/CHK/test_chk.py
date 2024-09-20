@@ -35,7 +35,3 @@ class TestCHK():
     assert checkout_solution.checkout("ZZSS") == 65 
     
   
-
-
-
-
