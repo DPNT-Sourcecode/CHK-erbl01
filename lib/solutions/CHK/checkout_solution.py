@@ -86,6 +86,8 @@ def get_price(item: str, units: int, sku_units: dict) -> int:
 
 def get_group_discount_price(sku_units: dict) -> int:
     GROUP_DISCOUNT_ITEMS = ["S", "T", "X", "Y", "Z"]
+    # Order list based on price to ensure most expensive is taken first
+    GROUP_DISCOUNT_ITEMS.sort(reverse=True, key=lambda item: PRICES[item][-1]["price"]) 
     ITEMS_REQUIRED_FOR_OFFER = 3
     DISCOUNTED_PRICE = 45
 
@@ -118,6 +120,7 @@ def checkout(skus: str) -> int:
         total_price += get_price(sku, frequency, result)
     
     return total_price
+
 
 
 
